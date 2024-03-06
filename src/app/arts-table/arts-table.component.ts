@@ -49,8 +49,8 @@ export class ArtsTableComponent {
 
   getIconClass(iconAlias: string): string {
     const iconClassMap: { [key: string] : string } = {
-      "arte00ico": "/assets/artes-00.png",
-      "ROI"      : "/assets/ROI.png"
+      "arte00ico": "./assets/artes-00.png",
+      "ROI"      : "./assets/ROI.png"
     }
     return iconClassMap[iconAlias] || '';
   }
@@ -72,8 +72,8 @@ export class ArtsTableComponent {
       "namePT": "Lâmina Demônio",
       "nameJP": "魔人剣",
       "furigana": "マジンケン",
-      "user": "/assets/ROI.png",
-      "type": "/assets/artes-00.png",
+      "user": "./assets/ROI.png",
+      "type": "./assets/artes-00.png",
       "cost": 4,
       "desc": "Hits twice up close, forcing downed enemies to stand up.",
       "learnDesc": "Default, %arte00ico needed, also %ROI too", 
@@ -85,8 +85,8 @@ export class ArtsTableComponent {
       "namePT": "Impoulso Sônico",
       "nameJP": "瞬迅剣",
       "furigana": "シュンジンケン",
-      "user": "/assets/ROI.png",
-      "type": "/assets/artes-00.png",
+      "user": "./assets/ROI.png",
+      "type": "./assets/artes-00.png",
       "cost": 5,
       "desc": "no desc",
       "learnDesc": "Level 4"
@@ -97,8 +97,8 @@ export class ArtsTableComponent {
       "namePT": "sdkfjhdsfkdsj em ingles",
       "nameJP": "askjhfdkjhds em japones",
       "furigana": "furigana",
-      "user": "/assets/ROI.png",
-      "type": "/assets/artes-00.png",
+      "user": "./assets/ROI.png",
+      "type": "./assets/artes-00.png",
       "cost": 9999,
       "desc": "levanta.......",
       "learnDesc": "Demon Fang Technical Branch"
