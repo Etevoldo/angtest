@@ -87,5 +87,19 @@ export const artes: Arte[] = [
       "desc": "",
       "learnDesc": "Default",
       "iconAliases": ["fire"]
+    },
+    {
+      "id": 8,
+      "nameEN": "Stone Blast",
+      "namePT": "",
+      "nameJP": "",
+      "furigana": "",
+      "user": "GEN",
+      "type": "slvl1",
+      "cost": 7,
+      "properties": "%fire",
+      "desc": "",
+      "learnDesc": "Default",
+      "iconAliases": ["fire"]
     }
 ]

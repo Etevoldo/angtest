@@ -7,13 +7,20 @@ import { ButtonService } from '../button.service';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <button type="button" (click)="toggle(0)" >Only Lloiyd</button>
-    <button type="button" (click)="toggle(1)" >Only Collete</button>
+    <input type="image" [src]="charaArray[0]" (click)="toggle(0)" >
+    <input type="image" [src]="charaArray[1]" (click)="toggle(1)" >
+    <input type="image" [src]="charaArray[2]" (click)="toggle(2)" >
   `,
   styleUrl: './topmenu.component.css'
 })
 export class TopmenuComponent {
   constructor(public ButtonService: ButtonService) {}
+
+    charaArray: Array<string> = [
+      "./assets/ROI.png",
+      "./assets/COR.png",
+      "./assets/GEN.png",
+    ]
 
   toggle(userId: number) {
     this.ButtonService.toggle(userId);
