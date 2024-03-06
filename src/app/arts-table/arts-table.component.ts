@@ -1,20 +1,20 @@
-import { Component, Input } from '@angular/core';
-import { ArtEntryComponent } from '../art-entry/art-entry.component';
+import { Component, Input, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Arte } from '../arte';
 import { TopmenuComponent } from '../topmenu/topmenu.component';
+import { artes } from '../artes-list';
+import { ButtonService } from '../button.service';
 
 
 @Component({
   selector: 'app-arts-table',
   standalone: true,
-  imports: [CommonModule, ArtEntryComponent, TopmenuComponent],
+  imports: [CommonModule, TopmenuComponent],
   template: `
     <Table>
       <tbody>
         <!--<app-art-entry *ngFor="let arte of artesList" [arte]="arte"> </app-art-entry> -->
-        <ng-container *ngFor="let arte of artesList" >
-          <tr [id]="arte.id" style="text-align:left">
+        <ng-container *ngFor="let arte of artesList">
+          <tr [id]="arte.id" style="text-align:left" *ngIf="isArteVisible">
             <td style="text-align: right;">
               <img [src]="arte.user" alt="{{arte.user}} Icon" width="28" height="32">
               <img [src]="arte.type" alt="{{arte.type}} Icon" width="32" height="32">
@@ -24,7 +24,7 @@ import { TopmenuComponent } from '../topmenu/topmenu.component';
                 {{arte.nameEN}} / {{arte.namePT}} /
                 <ruby style="font-size:85%">
                   [<rt></rt>{{arte.nameJP}}<rt>{{arte.furigana}}</rt>]
-                </ruby>
+                </ruby>''
                 <br>
               </span>
               {{arte.desc}}
@@ -46,6 +46,13 @@ import { TopmenuComponent } from '../topmenu/topmenu.component';
   styleUrl: './arts-table.component.css'
 })
 export class ArtsTableComponent {
+  @Input() arteId: number | undefined;
+
+  constructor(public ButtonService: ButtonService) {}
+
+  get isArteVisible(): boolean {
+    return this.ButtonService.isArteVisible(this.arteId || 0);
+  }
 
   getIconClass(iconAlias: string): string {
     const iconClassMap: { [key: string] : string } = {
@@ -65,43 +72,7 @@ export class ArtsTableComponent {
       return content;
     }
 
-  artesList: Arte[] = [
-    {
-      "id": 1,
-      "nameEN": "Demon Fang",
-      "namePT": "Lâmina Demônio",
-      "nameJP": "魔人剣",
-      "furigana": "マジンケン",
-      "user": "./assets/ROI.png",
-      "type": "./assets/artes-00.png",
-      "cost": 4,
-      "desc": "Hits twice up close, forcing downed enemies to stand up.",
-      "learnDesc": "Default, %arte00ico needed, also %ROI too", 
-      "iconAliases": ["arte00ico", "ROI"]
-    },
-    {
-      "id": 2,
-      "nameEN": "Sonic Thrust",
-      "namePT": "Impoulso Sônico",
-      "nameJP": "瞬迅剣",
-      "furigana": "シュンジンケン",
-      "user": "./assets/ROI.png",
-      "type": "./assets/artes-00.png",
-      "cost": 5,
-      "desc": "no desc",
-      "learnDesc": "Level 4"
-    },
-    {
-      "id": 3,
-      "nameEN": "sdhfdsklj",
-      "namePT": "sdkfjhdsfkdsj em ingles",
-      "nameJP": "askjhfdkjhds em japones",
-      "furigana": "furigana",
-      "user": "./assets/ROI.png",
-      "type": "./assets/artes-00.png",
-      "cost": 9999,
-      "desc": "levanta.......",
-      "learnDesc": "Demon Fang Technical Branch"
-    }
-  ];
+  artesList = artes;
+
+  
 }
