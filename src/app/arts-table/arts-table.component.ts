@@ -14,10 +14,10 @@ import { ButtonService } from '../button.service';
       <tbody>
         <!--<app-art-entry *ngFor="let arte of artesList" [arte]="arte"> </app-art-entry> -->
         <ng-container *ngFor="let arte of artesList">
-          <tr [id]="arte.id" style="text-align:left" *ngIf="isArteVisible">
+          <tr [id]="arte.id" style="text-align:left" *ngIf="isArteVisible(arte.id)">
             <td style="text-align: right;">
-              <img [src]="arte.user" alt="{{arte.user}} Icon" width="28" height="32">
-              <img [src]="arte.type" alt="{{arte.type}} Icon" width="32" height="32">
+              <img [src]="getIconClass(arte.user)" alt="{{arte.user}} Icon" width="28" height="32">
+              <img [src]="getIconClass(arte.type)" alt="{{arte.type}} Icon" width="32" height="32">
             </td>
             <td colspan="2">
               <span class="itemname">
@@ -36,7 +36,7 @@ import { ButtonService } from '../button.service';
               <ng-template #elseBlock>{{arte.learnDesc}}</ng-template>
             </td>
           </tr>
-          <tr>
+          <tr *ngIf="isArteVisible(arte.id)">
             <td colspan="4"><hr>
           </tr>
         </ng-container>
@@ -46,18 +46,16 @@ import { ButtonService } from '../button.service';
   styleUrl: './arts-table.component.css'
 })
 export class ArtsTableComponent {
-  @Input() arteId: number | undefined;
-
   constructor(public ButtonService: ButtonService) {}
 
-  get isArteVisible(): boolean {
-    return this.ButtonService.isArteVisible(this.arteId || 0);
+  isArteVisible(arteId: number): boolean {
+    return this.ButtonService.isArteVisible(arteId || 0);
   }
 
   getIconClass(iconAlias: string): string {
     const iconClassMap: { [key: string] : string } = {
-      "arte00ico": "./assets/artes-00.png",
-      "ROI"      : "./assets/ROI.png"
+      "lvl1": "./assets/artes-00.png",
+      "ROI" : "./assets/ROI.png"
     }
     return iconClassMap[iconAlias] || '';
   }

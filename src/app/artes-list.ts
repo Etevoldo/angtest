@@ -7,12 +7,12 @@ export const artes: Arte[] = [
       "namePT": "Lâmina Demônio",
       "nameJP": "魔人剣",
       "furigana": "マジンケン",
-      "user": "./assets/ROI.png",
-      "type": "./assets/artes-00.png",
+      "user": "ROI",
+      "type": "lvl1",
       "cost": 4,
       "desc": "Hits twice up close, forcing downed enemies to stand up.",
-      "learnDesc": "Default, %arte00ico needed, also %ROI too", 
-      "iconAliases": ["arte00ico", "ROI"]
+      "learnDesc": "Default, %lvl1 needed, also %ROI too", 
+      "iconAliases": ["lvl1", "ROI"]
     },
     {
       "id": 2,
@@ -20,8 +20,8 @@ export const artes: Arte[] = [
       "namePT": "Impoulso Sônico",
       "nameJP": "瞬迅剣",
       "furigana": "シュンジンケン",
-      "user": "./assets/ROI.png",
-      "type": "./assets/artes-00.png",
+      "user": "ROI",
+      "type": "lvl1",
       "cost": 5,
       "desc": "no desc",
       "learnDesc": "Level 4"
@@ -32,8 +32,8 @@ export const artes: Arte[] = [
       "namePT": "sdkfjhdsfkdsj em ingles",
       "nameJP": "askjhfdkjhds em japones",
       "furigana": "furigana",
-      "user": "./assets/ROI.png",
-      "type": "./assets/artes-00.png",
+      "user": "ROI",
+      "type": "lvl1",
       "cost": 9999,
       "desc": "levanta.......",
       "learnDesc": "Demon Fang Technical Branch"
