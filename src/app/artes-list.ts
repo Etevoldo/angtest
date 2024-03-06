@@ -28,14 +28,64 @@ export const artes: Arte[] = [
     },
     {
       "id": 3,
-      "nameEN": "sdhfdsklj",
-      "namePT": "sdkfjhdsfkdsj em ingles",
-      "nameJP": "askjhfdkjhds em japones",
-      "furigana": "furigana",
+      "nameEN": "Sword Rain",
+      "namePT": "Chuva de areia",
+      "nameJP": "散沙雨",
+      "furigana": "チリサザメ",
       "user": "ROI",
       "type": "lvl1",
-      "cost": 9999,
-      "desc": "levanta.......",
-      "learnDesc": "Demon Fang Technical Branch"
+      "cost": 7,
+      "desc": "",
+      "learnDesc": "Level 7"
+    },
+    {
+      "id": 4,
+      "nameEN": "Ray Trust",
+      "namePT": "",
+      "nameJP": "",
+      "furigana": "",
+      "user": "COR",
+      "type": "lvl1",
+      "cost": 5,
+      "desc": "",
+      "learnDesc": "Default"
+    },
+    {
+      "id": 5,
+      "nameEN": "Pow Hammer",
+      "namePT": "",
+      "nameJP": "",
+      "furigana": "",
+      "user": "COR",
+      "type": "lvl1",
+      "cost": 8,
+      "desc": "",
+      "learnDesc": "Level 8"
+    },
+    {
+      "id": 6,
+      "nameEN": "Ring Whirlwind",
+      "namePT": "",
+      "nameJP": "",
+      "furigana": "",
+      "user": "COR",
+      "type": "lvl2",
+      "cost": 8,
+      "desc": "",
+      "learnDesc": "Level 8"
+    },
+    {
+      "id": 7,
+      "nameEN": "Fire Ball",
+      "namePT": "",
+      "nameJP": "",
+      "furigana": "",
+      "user": "GEN",
+      "type": "slvl1",
+      "cost": 7,
+      "properties": "%fire",
+      "desc": "",
+      "learnDesc": "Default",
+      "iconAliases": ["fire"]
     }
 ]

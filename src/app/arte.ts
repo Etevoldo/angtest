@@ -8,6 +8,7 @@ export interface Arte {
     type: string,
     cost: number,
     desc: string,
-    learnDesc: string
+    properties?: string,
+    learnDesc: string,
     iconAliases?: string[],
 }

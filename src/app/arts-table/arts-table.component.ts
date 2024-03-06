@@ -24,14 +24,18 @@ import { ButtonService } from '../button.service';
                 {{arte.nameEN}} / {{arte.namePT}} /
                 <ruby style="font-size:85%">
                   [<rt></rt>{{arte.nameJP}}<rt>{{arte.furigana}}</rt>]
-                </ruby>''
+                </ruby>
                 <br>
               </span>
               {{arte.desc}}
             </td>
-            <td> TP usage: {{arte.cost}}<br>
+            <td>
+              <span *ngIf="arte.properties;" [innerHTML]="
+                getContentWithoutIcon(arte.properties, arte.iconAliases!) ">
+              </span><br>
+              TP usage: {{arte.cost}}<br>
               <span *ngIf="arte.iconAliases; else elseBlock" [innerHTML]="
-                getContentWithoutIcon(arte.learnDesc, arte.iconAliases!) ">
+                getContentWithoutIcon(arte.learnDesc, arte.iconAliases) ">
               </span>
               <ng-template #elseBlock>{{arte.learnDesc}}</ng-template>
             </td>
@@ -55,7 +59,12 @@ export class ArtsTableComponent {
   getIconClass(iconAlias: string): string {
     const iconClassMap: { [key: string] : string } = {
       "lvl1": "./assets/artes-00.png",
-      "ROI" : "./assets/ROI.png"
+      "lvl2": "./assets/artes-01.png",
+      "slvl1": "./assets/artes-00-spell.png",
+      "ROI" : "./assets/ROI.png",
+      "COR": "./assets/COR.png",
+      "GEN": "./assets/GEN.png",
+      "fire": "./assets/icon-element-02.png"
     }
     return iconClassMap[iconAlias] || '';
   }
