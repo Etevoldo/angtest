@@ -24,16 +24,14 @@ import { ButtonService } from '../button.service';
                 {{arte.nameEN}} / {{arte.namePT}} /
                 <ruby style="font-size:85%">
                   [<rt></rt>{{arte.nameJP}}<rt>{{arte.furigana}}</rt>]
-                </ruby>
-                <br>
+                </ruby><br>
                 {{arte.desc}}
               </span>
               <ng-template #noPTJP class="itemname">
                 <span>
                   {{arte.nameEN}}
                   <ruby style="font-size:85%">
-                  </ruby>
-                  <br>
+                  </ruby><br>
                 </span>
                 {{arte.desc}}
               </ng-template>
