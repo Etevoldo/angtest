@@ -20,14 +20,23 @@ import { ButtonService } from '../button.service';
               <img [src]="getIconClass(arte.type)" alt="{{arte.type}} Icon" width="32" height="32">
             </td>
             <td colspan="2">
-              <span class="itemname">
+              <span class="itemname" *ngIf="arte.namePT; else noPTJP">
                 {{arte.nameEN}} / {{arte.namePT}} /
                 <ruby style="font-size:85%">
                   [<rt></rt>{{arte.nameJP}}<rt>{{arte.furigana}}</rt>]
                 </ruby>
                 <br>
+                {{arte.desc}}
               </span>
-              {{arte.desc}}
+              <ng-template #noPTJP class="itemname">
+                <span>
+                  {{arte.nameEN}}
+                  <ruby style="font-size:85%">
+                  </ruby>
+                  <br>
+                </span>
+                {{arte.desc}}
+              </ng-template>
             </td>
             <td>
               <span *ngIf="arte.properties;" [innerHTML]="
