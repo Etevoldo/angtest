@@ -41,9 +41,6 @@ export const artes: Arte[] = [
     {
       "id": 4,
       "nameEN": "Ray Trust",
-      "namePT": "",
-      "nameJP": "",
-      "furigana": "",
       "user": "COR",
       "type": "lvl1",
       "cost": 5,
@@ -53,9 +50,6 @@ export const artes: Arte[] = [
     {
       "id": 5,
       "nameEN": "Pow Hammer",
-      "namePT": "",
-      "nameJP": "",
-      "furigana": "",
       "user": "COR",
       "type": "lvl1",
       "cost": 8,
@@ -65,9 +59,6 @@ export const artes: Arte[] = [
     {
       "id": 6,
       "nameEN": "Ring Whirlwind",
-      "namePT": "",
-      "nameJP": "",
-      "furigana": "",
       "user": "COR",
       "type": "lvl2",
       "cost": 8,
@@ -77,28 +68,20 @@ export const artes: Arte[] = [
     {
       "id": 7,
       "nameEN": "Fire Ball",
-      "namePT": "",
-      "nameJP": "",
-      "furigana": "",
       "user": "GEN",
       "type": "slvl1",
       "cost": 7,
       "properties": "%fire",
-      "desc": "",
       "learnDesc": "Default",
       "iconAliases": ["fire"]
     },
     {
       "id": 8,
       "nameEN": "Stone Blast",
-      "namePT": "",
-      "nameJP": "",
-      "furigana": "",
       "user": "GEN",
       "type": "slvl1",
       "cost": 7,
       "properties": "%fire",
-      "desc": "",
       "learnDesc": "Default",
       "iconAliases": ["fire"]
     }
