@@ -10,7 +10,7 @@ export class ButtonService {
   hideArts: Set<number> = new Set<number>();
 
   toggle(userId: number) {
-    this.hideArts.clear();
+    this.showall();
     let firstArte = this.artUser[userId];
     let lastArte = this.artUser[userId + 1] - 1;
 
@@ -18,6 +18,10 @@ export class ButtonService {
       if (firstArte > i || i > lastArte)
         this.hideArts.add(i);
     }
+  }
+
+  showall(){
+    this.hideArts.clear();
   }
 
   isArteVisible(arteId: number): boolean {
