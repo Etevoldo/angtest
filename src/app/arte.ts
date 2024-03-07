@@ -1,9 +1,9 @@
 export interface Arte {
     id: number,
     nameEN: string,
-    namePT: string,
-    nameJP: string,
-    furigana: string,
+    namePT?: string,
+    nameJP?: string,
+    furigana?: string,
     user: string,
     type: string,
     cost: number,
