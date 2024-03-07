@@ -1,15 +1,19 @@
 @import '@fortawesome/fontawesome-free/css/all.css';
 
 body {
-  background-color: #523f3e;
-  color: #efd1ae;
+  background-color: #183742;
+  color: #ffffff;
   font-size: 16;
+  font-family: sans-serif
 }
 .itemname {
-  color: #ffebd2;
+  color: #ffffff;
   font-size: 20;
 }
 .itemdesc {
+}
+.highlight, hr {
+  color: #dfb180
 }
 .equip {
   text-align: right;
@@ -55,114 +59,6 @@ table.synopsis td {
   text-align: center;
   color: #ffebd2;
   font-size: 20;
-}
-table.necropolisfloor td {
-  width: 200px;
-  height: 150px;
-  padding: 0;
-}
-td.necropolistile1 div.necropolis-data {
-  background-color: black;
-}
-td.necropolistile2 div.necropolis-data {
-  background-color: #701010;
-}
-td.necropolistile3 div.necropolis-data {
-  background-color: #203860;
-}
-td.necropolistile4 div.necropolis-data {
-  background-color: #204040;
-}
-td.necropolistile5 div.necropolis-data {
-  background-color: #701010;
-}
-div.necropolis-arrow-up {
-  float: left;
-  width: 200px;
-  height: 16px;
-  text-align: center;
-}
-div.necropolis-arrow-down {
-  float: left;
-  width: 200px;
-  height: 16px;
-  text-align: center;
-}
-div.necropolis-arrow-side {
-  float: left;
-  width: 16px;
-  height: 118px;
-  text-align: center;
-  line-height: 118px;
-  position: relative;
-  min-height: 16px;
-}
-div.necropolis-arrow-side img {
-  vertical-align: middle;
-  max-height: 118px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-}
-div.necropolis-data {
-  float: left;
-  width: 166px;
-  height: 116px;
-  text-align: center;
-  border: 1px solid black;
-}
-div.necropolis-data table {
-  margin: 0px auto;
-}
-div.necropolis-data td {
-  width: auto;
-  height: auto;
-  text-align: center;
-  padding: 0px 4px 0px 4px;
-}
-td.skilljpn {
-  white-space: nowrap;
-}
-td.skilldata {
-  width: 275px;
-}
-.strategycat {
-  color: #ffebd2;
-}
-.strategychar {
-  text-align: center;
-}
-table.settings td {
-  vertical-align: middle;
-  min-width: 90px;
-}
-.difficultyname {
-  font-weight: bold;
-  text-decoration: underline;
-}
-div.necropolis-select {
-  width: 100%;
-}
-div.necropolis-select table {
-  text-align: center;
-  margin: 0px auto;
-  font-size: 20;
-}
-div.scenario-index {
-  float: left;
-  text-align: left;
-  margin-right: 14px;
-}
-div.scenario-index-sub {
-  width: 220px;
-}
-span.scenario-selected {
-  font-weight: bold;
-}
-div.character-select {
-  margin-bottom: 16px;
 }
 #footer_time {
   display: none;
