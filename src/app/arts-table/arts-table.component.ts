@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TopmenuComponent } from '../topmenu/topmenu.component';
 import { artes } from '../artes-list';
 import { ButtonService } from '../button.service';
+import { ImagesService } from '../images.service';
 
 
 @Component({
@@ -16,8 +17,8 @@ import { ButtonService } from '../button.service';
         <ng-container *ngFor="let arte of artesList">
           <tr [id]="arte.id" style="text-align:left" *ngIf="isArteVisible(arte.id)">
             <td style="text-align: right;">
-              <img [src]="getIconClass(arte.user)" alt="{{arte.user}} Icon" width="28" height="32">
-              <img [src]="getIconClass(arte.type)" alt="{{arte.type}} Icon" width="32" height="32">
+              <img [src]="getImagePath(arte.user)" alt="{{arte.user}} Icon" width="28" height="32">
+              <img [src]="getImagePath(arte.type)" alt="{{arte.type}} Icon" width="32" height="32">
             </td>
             <td colspan="2">
               <span class="itemname" *ngIf="arte.namePT; else noPTJP">
@@ -57,27 +58,20 @@ import { ButtonService } from '../button.service';
   styleUrl: './arts-table.component.css'
 })
 export class ArtsTableComponent {
-  constructor(public ButtonService: ButtonService) {}
+  constructor(private ButtonService: ButtonService,
+              private ImagesService: ImagesService) {}
 
   isArteVisible(arteId: number): boolean {
     return this.ButtonService.isArteVisible(arteId || 0);
   }
 
-  getIconClass(iconAlias: string): string {
-    const iconClassMap: { [key: string] : string } = {
-      "lvl1": "./assets/artes-00.png",
-      "lvl2": "./assets/artes-01.png",
-      "slvl1": "./assets/artes-00-spell.png",
-      "ROI" : "./assets/ROI.png",
-      "COR": "./assets/COR.png",
-      "GEN": "./assets/GEN.png",
-      "fire": "./assets/icon-element-02.png"
-    }
-    return iconClassMap[iconAlias] || '';
+  getImagePath(imageAlias: string): string {
+    return this.ImagesService.getImagePath(imageAlias);
   }
+
   getContentWithoutIcon(content: string, iconAliases: string[]): string {
     iconAliases.forEach((iconAlias) => {
-        const iconSrc = this.getIconClass(iconAlias);
+        const iconSrc = this.getImagePath(iconAlias);
         if (iconSrc) {
           const iconTag = `<img src="${iconSrc}" width="15px" height="15px">`;
           content = content.replace(`%${iconAlias}`, iconTag);

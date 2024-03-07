@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ImagesService } from '../images.service';
 import { ButtonService } from '../button.service';
 
 @Component({
@@ -7,26 +8,24 @@ import { ButtonService } from '../button.service';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <input type="image" [src]="charaArray[0]" (click)="toggle(0)"
+    <input type="image" [src]="getImagePath('ROI')" (click)="toggle(0)"
       title="Show Lloyd only" >
-    <input type="image" [src]="charaArray[1]" (click)="toggle(1)"
+    <input type="image" [src]="getImagePath('COR')" (click)="toggle(1)"
       title="Show Collete Only" >
-    <input type="image" [src]="charaArray[2]" (click)="toggle(2)"
+    <input type="image" [src]="getImagePath('GEN')" (click)="toggle(2)"
       title="Show Genis Only" >
-    <input type="image" [src]="charaArray[3]" (click)="showall()" 
+    <input type="image" [src]="getImagePath('fire')" (click)="showall()" 
       title="Show All" >
   `,
   styleUrl: './topmenu.component.css'
 })
 export class TopmenuComponent {
-  constructor(public ButtonService: ButtonService) {}
+  constructor(private ButtonService: ButtonService,
+              private ImagesService: ImagesService) {}
 
-    charaArray: Array<string> = [
-      "./assets/ROI.png",
-      "./assets/COR.png",
-      "./assets/GEN.png",
-      "./assets/icon-element-02.png",
-    ]
+  getImagePath(imageAlias: string): string {
+    return this.ImagesService.getImagePath(imageAlias);
+  }
 
   toggle(userId: number) {
     this.ButtonService.toggle(userId);
