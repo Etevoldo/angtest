@@ -13,12 +13,15 @@ import { ImagesService } from '../images.service';
   template: `
     <Table>
       <tbody>
-        <!--<app-art-entry *ngFor="let arte of artesList" [arte]="arte"> </app-art-entry> -->
         <ng-container *ngFor="let arte of artesList">
-          <tr [id]="arte.id" style="text-align:left" *ngIf="isArteVisible(arte.id)">
+          <tr *ngIf="isArteVisible(arte.id)" 
+              [id]="arte.id" 
+              style="text-align:left">
             <td style="text-align: right;">
-              <img [src]="getImagePath(arte.user)" alt="{{arte.user}} Icon" width="28" height="32">
-              <img [src]="getImagePath(arte.type)" alt="{{arte.type}} Icon" width="32" height="32">
+              <img [src]="getImagePath(arte.user)" alt="{{arte.user}} 
+                Icon" width="28" height="32">
+              <img [src]="getImagePath(arte.type)" alt="{{arte.type}} Icon" 
+                width="32" height="32">
             </td>
             <td colspan="2">
               <span class="itemname" *ngIf="arte.namePT; else noPTJP">
@@ -38,10 +41,14 @@ import { ImagesService } from '../images.service';
               </ng-template>
             </td>
             <td>
-              <span *ngIf="arte.properties;" [innerHTML]="
-                getContentWithoutIcon(arte.properties, arte.iconAliases!) ">
-              </span><br>
-              TP usage: {{arte.cost}}<br>
+              <div *ngIf="arte.properties;">
+                <span [innerHTML]="
+                  getContentWithoutIcon(arte.properties, arte.iconAliases!)">
+                </span>
+                <br>
+              </div>
+              <span class="highlight">TP:</span>
+                 {{arte.cost}}<br>
               <span *ngIf="arte.iconAliases; else elseBlock" [innerHTML]="
                 getContentWithoutIcon(arte.learnDesc, arte.iconAliases) ">
               </span>
@@ -73,7 +80,7 @@ export class ArtsTableComponent {
     iconAliases.forEach((iconAlias) => {
         const iconSrc = this.getImagePath(iconAlias);
         if (iconSrc) {
-          const iconTag = `<img src="${iconSrc}" width="15px" height="15px">`;
+          const iconTag = `<img src="${iconSrc}" width="20px" height="20px">`;
           content = content.replace(`%${iconAlias}`, iconTag);
         }
       });
