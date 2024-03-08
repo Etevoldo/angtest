@@ -10,10 +10,19 @@ body {
   color: #ffffff;
   font-size: 20;
 }
-.itemdesc {
-}
-.highlight, hr {
+.highlight{
   color: #dfb180
+}
+.descCollum {
+  width: 20em;
+}
+
+.arteInfo {
+  max-width: 15em;
+  text-align: center;
+}
+.hr {
+	color: #646464;
 }
 .equip {
   text-align: right;
@@ -34,41 +43,10 @@ td,
 td > a {
   vertical-align: top;
 }
-a:link,
-a:visited,
-a:hover,
-a:active {
-  color: #ffebd2;
-}
-table.element {
-  display: inline-block;
-}
 table.element td {
   text-align: center;
   padding: 0px 8px 0px 8px;
   border-spacing: 0px;
-}
-table.synopsis {
-  margin: 0px auto;
-}
-table.synopsis td {
-  padding: 0px 10px 0px 10px;
-  border-spacing: 10px;
-}
-.synopsistitle {
-  text-align: center;
-  color: #ffebd2;
-  font-size: 20;
-}
-#footer_time {
-  display: none;
-}
-#header-name {
-  text-align: center;
-}
-#topmenu {
-  text-align: center;
-  font-size: 22;
 }
 #content {
   text-align: center;
