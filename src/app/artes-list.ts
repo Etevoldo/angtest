@@ -76,4 +76,16 @@ export const artes: Arte[] = [
       nameSt: "Super Sonic Thrust",
     }
   },
+  {
+    id: 9,
+    name: "Sword Rain: Alpha",
+    user: "ROI",
+    type: "lvl2",
+    cost: "15",
+    learnDesc: "Level 27<br>%lvl1 Sword Rain, 50 uses",
+    iconAliases: ["lvl1"],
+    branch: {
+      nameSt: "Sonic Sword Rain"
+    }
+  }
 ]

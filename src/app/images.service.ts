@@ -26,7 +26,9 @@ export class ImagesService {
       "thunder": "./assets/iconThunder.webp",
       "water": "./assets/iconWater.webp",
       "wind": "./assets/iconWind.webp",
-      "angel": "./assets/sAngel.webp"
+      "angel": "./assets/sAngel.webp",
+      "technical": "./assets/technical.webp",
+      "strike": "./assets/strike.webp"
     }
     return iconClassMap[imageAlias] || '';
   }
