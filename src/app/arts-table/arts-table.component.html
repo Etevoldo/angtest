@@ -4,23 +4,35 @@
 			<tr *ngIf="isArteVisible(arte.id)" 
 					[id]="arte.id" 
 					style="text-align:left">
-				<td *ngIf="arte.name; else skip" style="text-align: right;">
+				<td *ngIf="arte.name; else skip" style="max-width: 64px;">
 					<img [src]="getImagePath(arte.user)" alt="{{arte.user}} 
-						Icon" width="28" height="32">
+						Icon" width="32" height="32">
 					<img [src]="getImagePath(arte.type)" alt="{{arte.type}} Icon" 
 						width="32" height="32">
+          <img [src]="getBranchType(arte)" [alt]="getBranchType(arte)"
+          width="32" height="32" *ngIf="arte.branch">
 				</td>
 				<ng-template #skip>
                     <td class="blankspace"></td>
                 </ng-template>
 				<td [attr.colspan]="getcolSize(!(arte.branch?.nameSt))" class="descCollum">
-					<span>
-						{{arte.name}}
-						<ruby style="font-size:85%">
-						</ruby><br>
-					</span>
+					<span style="font-size: larger;"> {{arte.name}}</span><br>
 					{{arte.desc}}
 				</td>
+				<ng-container *ngIf="arte.branch">
+					<td style="max-width: 64px;">
+						<img [src]="getImagePath(arte.user)" alt="{{arte.user}} 
+							Icon" width="32" height="32">
+						<img [src]="getImagePath(arte.type)" alt="{{arte.type}} Icon" 
+							width="32" height="32">
+            <img [src]="getImagePath('strike')" alt="strike"
+              width="32" height="32">
+					</td>
+					<td colspan="2" class="descCollum">
+						<span style="font-size: larger;">{{arte.branch.nameSt}}</span><br>
+						{{arte.branch.desc}}
+					</td>
+				</ng-container>
 				<td class="arteInfo">
 					<div *ngIf="arte.properties;">
 						<span [innerHTML]="getProps(arte.properties)">
@@ -33,21 +45,9 @@
 					</span>
 					<ng-template #elseBlock>{{arte.learnDesc}}</ng-template>
 				</td>
-				<ng-container *ngIf="arte.branch">
-					<td style="text-align: right;">
-						<img [src]="getImagePath(arte.user)" alt="{{arte.user}} 
-							Icon" width="28" height="32">
-						<img [src]="getImagePath(arte.type)" alt="{{arte.type}} Icon" 
-							width="32" height="32">
-					</td>
-					<td colspan="2" class="descCollum">
-						<span>{{arte.branch.nameSt}}</span><br>
-						{{arte.branch.desc}}
-					</td>
-				</ng-container>
 			</tr>
 			<tr *ngIf="isArteVisible(arte.id)">
-				<td colspan="6"><hr>
+				<td colspan="7"><hr>
 			</tr>
 		</ng-container>
 	</tbody>

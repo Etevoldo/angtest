@@ -6,10 +6,6 @@ body {
   font-size: 16;
   font-family: sans-serif
 }
-.itemname {
-  color: #ffffff;
-  font-size: 20;
-}
 .highlight{
   color: #dfb180
 }
@@ -19,7 +15,7 @@ body {
 
 .arteInfo {
   max-width: 15em;
-  text-align: center;
+  text-align: right;
 }
 .hr {
 	color: #646464;

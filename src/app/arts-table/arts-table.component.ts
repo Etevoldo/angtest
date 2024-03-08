@@ -4,6 +4,7 @@ import { TopmenuComponent } from '../topmenu/topmenu.component';
 import { artes } from '../artes-list';
 import { ButtonService } from '../button.service';
 import { ImagesService } from '../images.service';
+import { Arte } from '../arte';
 
 
 @Component({
@@ -14,6 +15,9 @@ import { ImagesService } from '../images.service';
   styleUrl: './arts-table.component.css'
 })
 export class ArtsTableComponent {
+
+  artesList = artes;
+
   constructor(private ButtonService: ButtonService,
               private ImagesService: ImagesService) {}
 
@@ -26,7 +30,16 @@ export class ArtsTableComponent {
   }
 
   getcolSize(hasBranch: boolean): number {
-      return hasBranch ? 4 : 2;
+      return hasBranch ? 5 : 2;
+  }
+
+  getBranchType(arte: Arte){
+    if (arte.branch && arte.branch.nameSt)
+      return this.getImagePath("technical");
+    if (arte.branch)
+      return this.getImagePath("strike");
+    else
+      return "";
   }
 
   getProps(props: string[]): string {
@@ -51,8 +64,4 @@ export class ArtsTableComponent {
       });
       return content;
     }
-
-  artesList = artes;
-
-  
 }
