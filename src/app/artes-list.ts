@@ -1,88 +1,79 @@
 import { Arte } from "./arte";
 
 export const artes: Arte[] = [
-    {
-      "id": 1,
-      "nameEN": "Demon Fang",
-      "namePT": "Lâmina Demônio",
-      "nameJP": "魔人剣",
-      "furigana": "マジンケン",
-      "user": "ROI",
-      "type": "lvl1",
-      "cost": 4,
-      "desc": "Hits twice up close, forcing downed enemies to stand up.",
-      "learnDesc": "Default, %lvl1 needed, also %ROI too", 
-      "iconAliases": ["lvl1", "ROI"]
-    },
-    {
-      "id": 2,
-      "nameEN": "Sonic Thrust",
-      "namePT": "Impoulso Sônico",
-      "nameJP": "瞬迅剣",
-      "furigana": "シュンジンケン",
-      "user": "ROI",
-      "type": "lvl1",
-      "cost": 5,
-      "desc": "no desc",
-      "learnDesc": "Level 4"
-    },
-    {
-      "id": 3,
-      "nameEN": "Sword Rain",
-      "namePT": "Chuva de areia",
-      "nameJP": "散沙雨",
-      "furigana": "チリサザメ",
-      "user": "ROI",
-      "type": "lvl1",
-      "cost": 7,
-      "desc": "",
-      "learnDesc": "Level 7"
-    },
-    {
-      "id": 4,
-      "nameEN": "Ray Trust",
-      "user": "COR",
-      "type": "lvl1",
-      "cost": 5,
-      "desc": "",
-      "learnDesc": "Default"
-    },
-    {
-      "id": 5,
-      "nameEN": "Pow Hammer",
-      "user": "COR",
-      "type": "lvl1",
-      "cost": 8,
-      "desc": "",
-      "learnDesc": "Level 8"
-    },
-    {
-      "id": 6,
-      "nameEN": "Ring Whirlwind",
-      "user": "COR",
-      "type": "lvl2",
-      "cost": 8,
-      "desc": "",
-      "learnDesc": "Level 8"
-    },
-    {
-      "id": 7,
-      "nameEN": "Fire Ball",
-      "user": "GEN",
-      "type": "slvl1",
-      "cost": 7,
-      "properties": "%fire",
-      "learnDesc": "Default",
-      "iconAliases": ["fire"]
-    },
-    {
-      "id": 8,
-      "nameEN": "Stone Blast",
-      "user": "GEN",
-      "type": "slvl1",
-      "cost": 7,
-      "properties": "%fire",
-      "learnDesc": "Default",
-      "iconAliases": ["fire"]
+  {
+    "id": 1,
+    "name": "Demon Fang",
+    "user": "ROI",
+    "type": "lvl1",
+    "cost": "4",
+    "desc": "Hits twice up close, forcing downed enemies to stand up.",
+    "learnDesc": "Default"
+  },
+  {
+    "id": 2,
+    "name": "Sonic Thrust",
+    "user": "ROI",
+    "type": "lvl1",
+    "cost": "5",
+    "learnDesc": "Level 4"
+  },
+  {
+    "id": 3,
+    "name": "Sword Rain",
+    "user": "ROI",
+    "type": "lvl1",
+    "cost": "7",
+    "learnDesc": "Level 7"
+  },
+  {
+    "id": 4,
+    "name": "Tiger Blade",
+    "user": "ROI",
+    "type": "lvl1",
+    "cost": "8",
+    "learnDesc": "Level 9"
+  },
+  {
+    "id": 5,
+    "name": "Tempest",
+    "user": "ROI",
+    "type": "lvl1",
+    "desc": "Aerial-enabled if equipped with the Sky Cancel EX Skill.",
+    "properties": ["aerial"],
+    "cost": "8",
+    "learnDesc": "Level 11"
+  },
+  {
+    "id": 6,
+    "name": "Beast",
+    "user": "ROI",
+    "type": "lvl2",
+    "cost": "12",
+    "learnDesc": "Level 14"
+  },
+  {
+    "id": 7,
+    "name": "Double Demon Fang",
+    "user": "ROI",
+    "type": "lvl2",
+    "cost": "12",
+    "learnDesc": "Level 16<br>%lvl1 Demon Fang, 50 uses",
+    iconAliases: ["lvl1"],
+    branch: {
+      nameSt: "Fierce Demon Fang",
     }
+  },
+  {
+    id: 8,
+    name: "Hurricane Thrust",
+    user: "ROI",
+    type: "lvl2",
+    cost: "15",
+    learnDesc: "Level 18<br>%lvl1 Sonic Thrust, 50 uses",
+    iconAliases: ["lvl1"],
+    branch: {
+      nameSt: "Super Sonic Thrust",
+    }
+  },
 ]
