@@ -1,10 +1,17 @@
 @import '@fortawesome/fontawesome-free/css/all.css';
 
+@font-face {
+  font-family: 'Symphonia Sans';
+  src: url(./assets/SymphoniaSans-Regular.ttf);
+}
+
+
 body {
   background-color: #183742;
   color: #ffffff;
   font-size: 16;
-  font-family: sans-serif
+  font-family: 'Symphonia Sans';
+  font-weight: 30;
 }
 .highlight{
   color: #dfb180
