@@ -1,14 +1,19 @@
 export interface Arte {
     id: number,
-    nameEN: string,
-    namePT?: string,
-    nameJP?: string,
-    furigana?: string,
+    name?: string,
+    romaji?: string,
     user: string,
     type: string,
-    cost: number,
+    cost: string,
     desc?: string,
-    properties?: string,
+    properties?: string[],
     learnDesc: string,
     iconAliases?: string[],
+    branch?: {
+        nameSt: string,
+        namePT?: string,
+        nameJP?: string,
+        furigana?: string,
+        desc?: string,
+    }
 }
