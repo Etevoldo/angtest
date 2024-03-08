@@ -3,7 +3,7 @@ Based on [Hyouta website](https://hyouta.com/vesperia/index.php) made mainly as 
 ---
 Some icons have been slightly modified and repurposed for my preference.
 
-HD icons courtesy of [Tales of ABCDE Discord]https://discord.gg/ccVNaPJSyK.
+HD icons courtesy of [Tales of ABCDE Discord](https://discord.gg/ccVNaPJSyK).
 
 All information taken from the [Aselia Wiki](https://aselia.fandom.com/).
 
