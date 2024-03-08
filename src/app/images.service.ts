@@ -18,6 +18,7 @@ export class ImagesService {
       "ROI" : "./assets/ROI.png",
       "COR": "./assets/COR.png",
       "GEN": "./assets/GEN.png",
+      "aerial": "./assets/iconAerial.webp",
       "dark": "./assets/iconDark.webp",
       "earth": "./assets/iconEarth.webp",
       "fire": "./assets/iconFire.webp",
