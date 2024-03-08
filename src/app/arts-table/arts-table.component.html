@@ -1,0 +1,54 @@
+<Table>
+	<tbody>
+		<ng-container *ngFor="let arte of artesList">
+			<tr *ngIf="isArteVisible(arte.id)" 
+					[id]="arte.id" 
+					style="text-align:left">
+				<td *ngIf="arte.name; else skip" style="text-align: right;">
+					<img [src]="getImagePath(arte.user)" alt="{{arte.user}} 
+						Icon" width="28" height="32">
+					<img [src]="getImagePath(arte.type)" alt="{{arte.type}} Icon" 
+						width="32" height="32">
+				</td>
+				<ng-template #skip>
+                    <td class="blankspace"></td>
+                </ng-template>
+				<td [attr.colspan]="getcolSize(!(arte.branch?.nameSt))" class="descCollum">
+					<span>
+						{{arte.name}}
+						<ruby style="font-size:85%">
+						</ruby><br>
+					</span>
+					{{arte.desc}}
+				</td>
+				<td class="arteInfo">
+					<div *ngIf="arte.properties;">
+						<span [innerHTML]="getProps(arte.properties)">
+						</span><br>
+					</div>
+					<span class="highlight">TP:</span>
+						{{arte.cost}}<br>
+					<span *ngIf="arte.iconAliases; else elseBlock" [innerHTML]="
+						getContentWithoutIcon(arte.learnDesc, arte.iconAliases) ">
+					</span>
+					<ng-template #elseBlock>{{arte.learnDesc}}</ng-template>
+				</td>
+				<ng-container *ngIf="arte.branch">
+					<td style="text-align: right;">
+						<img [src]="getImagePath(arte.user)" alt="{{arte.user}} 
+							Icon" width="28" height="32">
+						<img [src]="getImagePath(arte.type)" alt="{{arte.type}} Icon" 
+							width="32" height="32">
+					</td>
+					<td colspan="2" class="descCollum">
+						<span>{{arte.branch.nameSt}}</span><br>
+						{{arte.branch.desc}}
+					</td>
+				</ng-container>
+			</tr>
+			<tr *ngIf="isArteVisible(arte.id)">
+				<td colspan="6"><hr>
+			</tr>
+		</ng-container>
+	</tbody>
+</Table>
