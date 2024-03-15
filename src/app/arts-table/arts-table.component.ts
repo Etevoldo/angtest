@@ -1,10 +1,10 @@
 import { Component, Input, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TopmenuComponent } from '../topmenu/topmenu.component';
-import { artes } from '../artes-list';
+import { Arte } from '../arte';
 import { ButtonService } from '../button.service';
 import { ImagesService } from '../images.service';
-import { Arte } from '../arte';
+import { ArtesService } from '../artes.service';
 
 
 @Component({
@@ -16,10 +16,17 @@ import { Arte } from '../arte';
 })
 export class ArtsTableComponent {
 
-  artesList = artes;
-
   constructor(private ButtonService: ButtonService,
-              private ImagesService: ImagesService) {}
+              private ImagesService: ImagesService,
+              private ArtesService: ArtesService) {}
+
+
+  artesList?: Arte[];
+
+  getArtes(){
+    this.ArtesService.getArtes()
+        .subscribe(artes => this.artesList = artes)
+  }
 
   isArteVisible(arteId: number): boolean {
     return this.ButtonService.isArteVisible(arteId || 0);
@@ -63,5 +70,9 @@ export class ArtsTableComponent {
         }
       });
       return content;
+    }
+
+    ngOnInit(): void {
+      this.getArtes();
     }
 }
