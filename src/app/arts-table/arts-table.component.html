@@ -10,16 +10,16 @@
           <img [src]="getImagePath(arte.type)" alt="{{arte.type}} Icon" 
             width="32" height="32">
           <img [src]="getBranchType(arte)" [alt]="getBranchType(arte)"
-            width="32" height="32" *ngIf="arte.branch">
+            width="32" height="32" *ngIf="arte.branch || arte.techonly">
         </td>
         <ng-template #skip>
           <td class="blankspace"></td>
         </ng-template>
         <td [attr.colspan]="getcolSize(!(arte.branch?.nameSt))" class="descCollum">
           <span style="font-size: larger;"> {{arte.name}}</span><br>
-          {{arte.desc}}
+          <span [innerHTML]="arte.desc"> </span>
         </td>
-        <ng-container *ngIf="arte.branch">
+        <ng-container *ngIf="arte.branch && arte.branch.nameSt">
           <td style="max-width: 64px;">
             <img [src]="getImagePath(arte.user)" alt="{{arte.user}} 
               Icon" width="28" height="32">

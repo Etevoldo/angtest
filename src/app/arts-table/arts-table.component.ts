@@ -43,6 +43,8 @@ export class ArtsTableComponent {
   getBranchType(arte: Arte){
     if (arte.branch && arte.branch.nameSt)
       return this.getImagePath("technical");
+    if (arte.techonly)
+      return this.getImagePath("technical");
     if (arte.branch)
       return this.getImagePath("strike");
     else

@@ -6,11 +6,12 @@ export interface Arte {
     type: string,
     cost: string,
     desc?: string,
+    techonly?: boolean,
     properties?: string[],
     learnDesc: string,
     iconAliases?: string[],
     branch?: {
-        nameSt: string,
+        nameSt?: string,
         namePT?: string,
         nameJP?: string,
         furigana?: string,
